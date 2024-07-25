@@ -29,8 +29,11 @@ function createSquares(){
         square.style.padding = '0';
         square.style.flex = '0 0 auto'
         square.style.boxSizing = 'border-box';
+
         square.addEventListener('mouseover', function(){
-            square.style.backgroundColor = 'yellow';
+            const getColorValue = () => Math.floor(Math.random()*255)
+            square.style.backgroundColor = `rgb(${getColorValue()}, ${getColorValue()}, ${getColorValue()})`;
+
         })
         rowContainer.appendChild(square);
     }
