@@ -3,6 +3,14 @@ let rowContainer;
 
 let squareCount = 16;
 
+let squareNum = document.querySelector('#squareNum');
+let darken = document.querySelector('#darken')
+let darkenClass = darken.classList
+let isDarkenOn
+let count = 0
+
+
+
 function createRow(){
     rowContainer = document.createElement('div');
     rowContainer.setAttribute('style','max-width:60vw; display:flex; flex:0 0 auto;flex-wrap:nowrap; padding:0; box-sizing:border-box;' );
@@ -31,9 +39,14 @@ function createSquares(){
         square.style.boxSizing = 'border-box';
 
         square.addEventListener('mouseover', function(){
-            const getColorValue = () => Math.floor(Math.random()*255)
-            square.style.backgroundColor = `rgb(${getColorValue()}, ${getColorValue()}, ${getColorValue()})`;
-
+            if(isDarkenOn){
+                    let opacity = count/10;
+                    square.style.backgroundColor = `rgb(0 0 0 / ${opacity})`
+                    count === 10? count = 0 : count++
+                } else {
+                const getColorValue = () => Math.floor(Math.random()*255)
+                square.style.backgroundColor = `rgb(${getColorValue()}, ${getColorValue()}, ${getColorValue()})`;
+            }
         })
         rowContainer.appendChild(square);
     }
@@ -48,7 +61,7 @@ function createGrid() {
 
 createGrid();
 
-let squareNum = document.querySelector('#squareNum');
+
 squareNum.addEventListener('click', ()=>{
      let input = parseInt(prompt(`Type in the number of squares per side for the new grid`));
      while (input > 100 || input < 16 || isNaN(input)){
@@ -56,6 +69,21 @@ squareNum.addEventListener('click', ()=>{
      } 
 
     squareCount = input
+    mainContainer.innerHTML = '';
+    createGrid();
+})
+
+
+
+
+darken.addEventListener('click',() => {
+   isDarkenOn = darkenClass.toggle('true');
+   mainContainer.innerHTML = '';
+   createGrid();
+})
+
+let clear = document.querySelector('#clear')
+clear.addEventListener('click',()=>{
     mainContainer.innerHTML = '';
     createGrid();
 })
