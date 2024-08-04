@@ -4,7 +4,7 @@
 body{
     display: flex;
     flex:0 0 auto;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     
     margin: 0;
@@ -18,13 +18,18 @@ body{
     padding:0;
     margin-top:15vh;
 
+    gap:5vw;
+
     
 }
     
 .left{
+    height:690px;
      display: flex;
      flex-direction: column;
-     gap: 50px;
+     justify-content: flex-end;
+     gap:80px;
+     
 }
 
 
@@ -44,26 +49,33 @@ button{
     border-radius: 12px;
     border: 0px #FFF;
     background: #cecece;
-background-image: url('button.png');
+    
 
-box-shadow: 4px 10px 6.4px -2px rgba(195, 32, 51, 0.80), 10px 11px 5.9px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 15px 8.2px -1px rgba(182, 34, 51, 0.80);
 
-font-family: 'Mochiy Pop P One', sans-serif serif;
+    font-family: 'Mochiy Pop P One', sans-serif serif;
+
+    align-self: center;
 
 }
 
-.mainContainer {
-    display:flex;
-    border: thin solid white;
-    flex-direction: column;
-    flex:0 0 auto;
-    align-items: center;
-    justify-content: center;
-    padding:0;
-    margin:0;
-    max-width: 562px;
-    max-height: 412px;
+#brush{
+    background-image: url('brushButton.png');
 }
+
+#rainbow{
+    background-image: url('rainbowButton.png');
+}
+
+#darken{
+    background-image: url('shadingButton.png');
+}
+
+#clear{
+    background-image: url('clearButton.png');
+}
+
+
 
 button{
     width:10vw;
@@ -74,11 +86,23 @@ button{
     gap:5px;
 }
 
-.sketchBoard {
-    width: 769.719px;
-    height: 634px;
 
-    min-width: 769.719px;
+footer{
+    
+    width:388px;
+    height: 58px;
+    background: url('footer.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+.sketchBoard {
+    width: 690.64px;
+    height: 690px;
+
+    min-width: 690.64px;
     min-height: 634px;
 
     flex:0 0 auto;
@@ -95,23 +119,53 @@ button{
 }
 
 .screenContainer{
-    height:512px;
+    height:596px;
     width:100%;
     display: flex;
-    
-    
 
 }
 
 .screen{
-    width: 562px;
-    height: 412px;
-    flex-shrink: 0;
-    background-color:aliceblue;
-    margin-left: 104px;
-    margin-top: 100px;
-    border-radius: 28px;
-    background: #E2E2E2;
+    display: flex;
+    width: 525px;
+    height: 525px;
+    flex-shrink: 1;
+    margin-left: 83px;
+    margin-top: 80px;
+
+    padding-left:5px;  
+   box-sizing: border-box;
+
+   align-items: center;
+
+}  
+
+.mainContainer {
+   
+
+    display:flex;
+
+    border: thin solid white 0;
+    flex-direction: column;
+    flex:1 1;
+
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    /* padding-left:1px; */
+    padding-right: 3px;
+    
+    padding-bottom: 3px;
+    align-self: center;
+    padding-right: 0;
+
+    
+
+    box-sizing: content-box;
+    background: url('mainContainer.png');
+    background-size:contain;
+    
+
 }
 
 .control{
@@ -122,34 +176,46 @@ button{
 }
 
 .colorPicker{
-    min-width: 68px;
-    min-height: 66px;
+    width: 59.76px;
+    height: 58px;
 
-    margin-top:33px;
-    margin-left:24px;
+    max-width: 59.76px;
+    max-height: 58px;
+
+    margin-top:15px;
+    margin-left:22px;
     
-    margin-bottom: 23px;
+    margin-bottom: 22px;
+    flex:0 0 auto;
+    opacity: 0;
     
 }
 
 .eraser{
-    margin-top:33px;
-    margin-right:23px;
-    margin-bottom: 23px;
+    width: 58px;
+    height: 58px;
+
+    max-width: 58px;
+    max-height: 58px;
+
+    margin-top:14px;
+    margin-right:22px;
+    margin-bottom: 24px;
+    opacity: 0;
 }
 
 
 .slider {
     -webkit-appearance: none;
-    width: 436px;
-    height: 26px;
+    width: 383px;
+    height: 20px;
     background: #FFD02C;
     border: 1px solid goldenrod;
     outline: none;
 
-    margin-top:52px;
+    margin-top:30px;
     margin-bottom:44px;
-    margin-left:75px;
+    margin-left:71px;
     margin-right: 75px;
 
     filter: drop-shadow(4px 6px 1.2px #C32033);
@@ -159,13 +225,13 @@ button{
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 29px;
-    height: 54px;
+    width: 24px;
+    height: 45px;
     flex-shrink: 0;
     border-radius: 7px;
-    border: 1px solid #FFF;
+    border: 0px solid #FFF;
     background: #FFF;
     box-shadow: 5px 9px 5.9px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    background-image: url('sliderThumb.png');
+    background: url('sliderThumb.png');
   }
