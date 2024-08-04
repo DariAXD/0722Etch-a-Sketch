@@ -13,7 +13,7 @@ let count = 0
 
 function createRow(){
     rowContainer = document.createElement('div');
-    rowContainer.setAttribute('style','max-width:60vw; display:flex; flex:0 0 auto;flex-wrap:nowrap; padding:0; box-sizing:border-box;' );
+    rowContainer.setAttribute('style','width:562px; display:flex; flex:1 0 auto;flex-wrap:nowrap; padding:0; box-sizing:border-box;' );
 
     for (let i = 0; i<squareCount; i++){
     createSquares();
@@ -26,9 +26,9 @@ function createRow(){
 
 function createSquares(){
         let square = document.createElement('div');
-        let squareSize = 60/squareCount;
+        let squareSize = 562/squareCount;
         console.log(squareSize);
-        let squareSizeString = `${squareSize}vw`
+        let squareSizeString = `${squareSize}px`
         console.log(squareSizeString);
         square.style.width = squareSizeString;
         square.style.height = squareSizeString;

@@ -1,12 +1,55 @@
-html, body{
+
+
+
+body{
     display: flex;
-    flex-direction: column;
     flex:0 0 auto;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    
     margin: 0;
     padding: 0;
-    gap:5vh;
+
+    background: url(bkgimg.png) ;
+    background-size: cover;
+    background-repeat: repeat;
+
+    margin:0;
+    padding:0;
+    margin-top:15vh;
+
+    
+}
+    
+.left{
+     display: flex;
+     flex-direction: column;
+     gap: 50px;
+}
+
+
+.button{
+    display: flex;
+    flex-direction: column;
+    gap:47px;
+
+}
+
+button{
+    
+    min-width: 221px;
+    min-height: 72px;
+    flex-shrink: 0;
+
+    border-radius: 12px;
+    border: 0px #FFF;
+    background: #cecece;
+background-image: url('button.png');
+
+box-shadow: 4px 10px 6.4px -2px rgba(195, 32, 51, 0.80), 10px 11px 5.9px 0px rgba(0, 0, 0, 0.25);
+
+font-family: 'Mochiy Pop P One', sans-serif serif;
+
 }
 
 .mainContainer {
@@ -18,8 +61,8 @@ html, body{
     justify-content: center;
     padding:0;
     margin:0;
-    max-width: 60vw;
-    max-height: 60vw;
+    max-width: 562px;
+    max-height: 412px;
 }
 
 button{
@@ -30,3 +73,99 @@ button{
     margin:0;
     gap:5px;
 }
+
+.sketchBoard {
+    width: 769.719px;
+    height: 634px;
+
+    min-width: 769.719px;
+    min-height: 634px;
+
+    flex:0 0 auto;
+
+    
+    
+    background-image: url('sketchBoard.png');
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.screenContainer{
+    height:512px;
+    width:100%;
+    display: flex;
+    
+    
+
+}
+
+.screen{
+    width: 562px;
+    height: 412px;
+    flex-shrink: 0;
+    background-color:aliceblue;
+    margin-left: 104px;
+    margin-top: 100px;
+    border-radius: 28px;
+    background: #E2E2E2;
+}
+
+.control{
+    max-height:122px;
+    width:100%;
+    display: flex;
+
+}
+
+.colorPicker{
+    min-width: 68px;
+    min-height: 66px;
+
+    margin-top:33px;
+    margin-left:24px;
+    
+    margin-bottom: 23px;
+    
+}
+
+.eraser{
+    margin-top:33px;
+    margin-right:23px;
+    margin-bottom: 23px;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 436px;
+    height: 26px;
+    background: #FFD02C;
+    border: 1px solid goldenrod;
+    outline: none;
+
+    margin-top:52px;
+    margin-bottom:44px;
+    margin-left:75px;
+    margin-right: 75px;
+
+    filter: drop-shadow(4px 6px 1.2px #C32033);
+  }
+    
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 29px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    border: 1px solid #FFF;
+    background: #FFF;
+    box-shadow: 5px 9px 5.9px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    background-image: url('sliderThumb.png');
+  }
